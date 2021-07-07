@@ -26,7 +26,10 @@ startGame();
 
 function startGame() {
     o_Turn = false;
-    cellElements.forEach((cell) => {
+    cellElements.forEach(cell => {
+        cell.classList.remove(x_Class)
+        cell.classList.remove(o_Class)
+        cell.removeEventListener("click",handelclick)
         cell.addEventListener("click", handelclick, { once: true });
     });
     setBoardHoverClass();
